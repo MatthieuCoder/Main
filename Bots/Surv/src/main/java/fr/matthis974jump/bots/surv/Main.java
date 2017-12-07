@@ -10,6 +10,7 @@ import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.core.hooks.EventListener;
 import net.dv8tion.jda.core.hooks.ListenerAdapter;
 
+import java.util.Scanner;
 import java.util.logging.Logger;
 
 public class Main implements Runnable , EventListener{
@@ -17,7 +18,10 @@ public class Main implements Runnable , EventListener{
     private final String channel;
     private final String path;
     private JDA jda;
+    private final Scanner s = new Scanner(System.in);
     private static Logger  l = Logger.getLogger("MainBot");
+    private boolean inRunning;
+
     public Main(String token, String channel, String pathtomusic) throws Exception {
         this.token = token;
         this.channel = channel;
@@ -38,9 +42,16 @@ public class Main implements Runnable , EventListener{
                 .setToken(token)
                 .addEventListener(this)
                 .buildBlocking();
+        this.inRunning = true;
     }
     public void run() {
-
+        while(inRunning){
+            if(s.hasNext()) if(s.nextLine().equalsIgnoreCase("exit")) inRunning = false;
+        }
+        jda.shutdown();
+        s.close();
+        System.out.println("ByeBye");
+        System.exit(0);
     }
 
     public void onEvent(Event event) {
