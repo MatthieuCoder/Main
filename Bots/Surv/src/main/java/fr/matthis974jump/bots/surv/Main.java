@@ -19,6 +19,7 @@ import net.dv8tion.jda.core.hooks.ListenerAdapter;
 import java.io.File;
 import java.util.HashSet;
 import java.util.Scanner;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Main implements Runnable , EventListener{
@@ -27,31 +28,29 @@ public class Main implements Runnable , EventListener{
     private final Scanner s = new Scanner(System.in);
     private static Logger  l = Logger.getLogger("MainBot");
     private boolean inRunning;
-
-    public Main(String token) throws Exception {
-        this.token = token;
+    private Config config;
+    public Main() throws Exception {
+        File conf = new File("config.json");
+        SerializerConfig confs = new SerializerConfig();
+        confs.initGson();
+        config = confs.deserialize(FileManager.loadfile(conf));
+        this.token = config.getToken();
         connect();
     }
 
     public static void main(String[] args){
         try {
-            new Thread(new Main("MzgwMjUwNzIzNDE1NDkwNTYz.DQsgWQ.pMxSgywLn2qZgY4mFyIzt2G2aQs"),"Main").start();
+            new Thread(new Main(),"Main").start();
         } catch (Exception e) {
-            e.printStackTrace();
+            Main.l.log(Level.OFF,"Exception detected",e);
         }
     }
     private void connect() throws Exception{
-        // Note: It is important to register your ReadyListener before building
-
-        File conf = new File("config.json");
-        SerializerConfig confs = new SerializerConfig();
-        confs.initGson();
-        Config config = confs.deserialize(FileManager.loadfile(conf));
-
         jda = new JDABuilder(AccountType.BOT)
-                .setToken(config.getToken())
-                .addEventListener(this)
+                .setToken(token)
+                .addEventListener(this,new WorldsListener(this))
                 .buildBlocking();
+
         this.inRunning = true;
         for (Guild g:
              jda.getGuilds()) {
@@ -66,11 +65,15 @@ public class Main implements Runnable , EventListener{
         }
         jda.shutdown();
         s.close();
-        System.out.println("ByeBye");
+        System.out.println("OFF --- !");
         System.exit(0);
     }
 
     public void onEvent(Event event) {
         if(event instanceof ReadyEvent) l.info("The System is Ready ! :)");
+    }
+
+    public Config getConfig() {
+        return config;
     }
 }
