@@ -31,12 +31,15 @@ public class getadvrCommand extends Command {
             if(advr.length == 0){
                 builder.addField("*Rien :)*","",true);
             }else{
+                int i = 1;
                 for(Advertissements advertissements : advr){
-                    builder.addField(":arrow_forward: "+advertissements.getWhy(),advertissements.getDate().toString(),false);
+                    builder.addField(":arrow_forward:"+Integer.toString(i)+": "+advertissements.getWhy(),advertissements.getDate().toString(),false);
                     if(builder.build().getLength()  > 3000){
                         commandEvent.reply(builder.build());
                         builder = new EmbedBuilder();
+
                     }
+                    i++;
                 }
 
             }

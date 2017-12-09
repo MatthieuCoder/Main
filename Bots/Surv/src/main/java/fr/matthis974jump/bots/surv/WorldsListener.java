@@ -36,18 +36,32 @@ public class WorldsListener implements EventListener{
 
             if (msg.contains(denied)) {
                 Advertissements ad = new Advertissements();
-                ad.setWhy("Sending : "+denied);
+                ad.setWhy("Envoi de  : "+denied);
                 ad.setBy(null);
                 ad.setDate(Calendar.getInstance().getTime());
                 ldw.add(ad);
             }
+
+        }
+        if(e.getMessage().mentionsEveryone() && !e.getGuild().getMember(e.getAuthor()).hasPermission(Permission.ADMINISTRATOR)) {
+            Advertissements edv = new Advertissements();
+            edv.setWhy("Mention @everyone");
+            edv.setDate(Calendar.getInstance().getTime());
+            ldw.add(edv);
+        }
+
+        if(e.getMessage().getContent().contains("discord.gg/")) {
+            Advertissements edv = new Advertissements();
+            edv.setWhy("Invitation autre Serveur");
+            edv.setDate(Calendar.getInstance().getTime());
+            ldw.add(edv);
         }
         if(ldw.size() > 0) {
             EmbedBuilder builder = new EmbedBuilder();
             builder.setDescription("SANCTION - VOCABULAIRE");
             builder.setTitle("SANCTION - VOCABULAIRE");
             for (Advertissements ad : ldw) {
-                builder.addField("Vocabualire inaproprié : ",ad.getWhy(),true);
+                builder.addField("Système interdit : ",ad.getWhy(),true);
 
                     CompletableFuture<String> completableFuture
                             = CompletableFuture.supplyAsync(() -> {
