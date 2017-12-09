@@ -24,6 +24,7 @@ import java.util.logging.Logger;
 
 public class Main implements Runnable , EventListener{
     private final String token;
+    private final bdd bdd;
     private JDA jda;
     private final Scanner s = new Scanner(System.in);
     private static Logger  l = Logger.getLogger("MainBot");
@@ -35,7 +36,10 @@ public class Main implements Runnable , EventListener{
         confs.initGson();
         config = confs.deserialize(FileManager.loadfile(conf));
         this.token = config.getToken();
+        this.bdd = new bdd(new ConnectCredidentials("jdbc:myql://","discord","root","root","localhost","3306"));
+        bdd.connect();
         connect();
+
     }
 
     public static void main(String[] args){
