@@ -25,6 +25,7 @@ public class WorldsListener implements EventListener{
 
     public void onEvent(Event event) {
         if(event instanceof MessageReceivedEvent) onGuildMessage(((MessageReceivedEvent)event));
+        System.out.println(event.getClass().getSimpleName());
     }
 
     private void onGuildMessage(MessageReceivedEvent e) {
