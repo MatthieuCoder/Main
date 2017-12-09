@@ -14,7 +14,6 @@ import net.dv8tion.jda.core.JDA;
 import net.dv8tion.jda.core.JDABuilder;
 import net.dv8tion.jda.core.entities.Game;
 import net.dv8tion.jda.core.entities.Guild;
-import net.dv8tion.jda.core.entities.Icon;
 import net.dv8tion.jda.core.entities.Member;
 import net.dv8tion.jda.core.events.Event;
 import net.dv8tion.jda.core.events.ReadyEvent;
@@ -93,7 +92,7 @@ public class Main implements Runnable , EventListener{
                 .addEventListener(waiter)
                 .addEventListener(client.build())
                 .buildBlocking();
-        jda.getSelfUser().getManager().setAvatar(Icon.from(new File("icone.png"))).queue();
+
         this.inRunning = true;
         for (Guild g:
              jda.getGuilds()) {
