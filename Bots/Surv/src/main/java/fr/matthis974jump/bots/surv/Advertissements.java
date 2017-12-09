@@ -11,7 +11,6 @@ public class Advertissements {
     public Member by;
     public String why;
     public Date date;
-    public int id;
 
     public void setBy(Member by) {
         this.by = by;
@@ -23,10 +22,6 @@ public class Advertissements {
 
     public void setDate(Date date) {
         this.date = date;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public Member getBy() {
@@ -41,7 +36,4 @@ public class Advertissements {
         return date;
     }
 
-    public int getId() {
-        return id;
-    }
 }

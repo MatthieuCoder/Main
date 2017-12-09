@@ -32,11 +32,12 @@ public class Main implements Runnable , EventListener{
     private Config config;
     public Main() throws Exception {
         File conf = new File("config.json");
+        FileManager.createfile(conf);
         SerializerConfig confs = new SerializerConfig();
         confs.initGson();
         config = confs.deserialize(FileManager.loadfile(conf));
         this.token = config.getToken();
-        this.bdd = new bdd(new ConnectCredidentials("jdbc:myql://","discord","root","root","localhost","3306"));
+        this.bdd = new bdd(new ConnectCredidentials("jdbc:mysql://","discord","root","root","localhost","3306"));
         bdd.connect();
         connect();
 
@@ -79,5 +80,9 @@ public class Main implements Runnable , EventListener{
 
     public Config getConfig() {
         return config;
+    }
+
+    public bdd getMysql() {
+        return bdd;
     }
 }

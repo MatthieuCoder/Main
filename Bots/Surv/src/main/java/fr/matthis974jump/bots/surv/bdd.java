@@ -2,6 +2,7 @@ package fr.matthis974jump.bots.surv;
 
 import com.google.gson.Gson;
 import net.dv8tion.jda.core.entities.Member;
+import net.dv8tion.jda.core.entities.Message;
 
 import java.io.IOException;
 import java.sql.*;
@@ -32,18 +33,8 @@ public class bdd {
             mc = null;
         }
     }
-    public Advertissements[] getAdvertissements(Member m) throws SQLException{
-        PreparedStatement ps = mc.prepareStatement("SELET * FROM 'users_adrvs' WHERE 'user'='"+m.getUser().getId()+"'");
-        ResultSet rs = ps.executeQuery();
-        ArrayList<Advertissements> adv = new ArrayList <Advertissements>();
-        Advertissements drv;
-        while(rs.next()){
-            Advertissements d = new Advertissements();
-            d.setBy(new Gson().fromJson(rs.getString("by"),Member.class));
-            d.setDate(rs.getDate("date"));
-            d.setId(rs.getInt("id"));
-            d.setWhy(rs.getString("why"));
-        }
-        return ((Advertissements[])adv.toArray());
+    public void addAdvertissementToMember(Member m, Advertissements a, Message msg) throws SQLException{
+        PreparedStatement ps = mc.prepareStatement("INSERT INTO `adv` (`id`, `user`, `guild`, `for`, `date`, `salon_id`) VALUES (NULL, '"+m.getUser().getId()+"', '"+m.getGuild().getId()+"', '"+a.getWhy()+"', '"+new Date(a.getDate().getTime())+"', '"+msg.getTextChannel().getId()+"');");
+        ps.executeUpdate();
     }
 }
