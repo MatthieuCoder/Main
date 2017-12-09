@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Class-Path: slf4j-api-1.7.25.jar log4j-1.2.17.jar gson-2.8.2.jar commo
+ ns-collections4-4.1.jar JDA-Utilities-1.8.jar okio-1.13.0.jar nv-webs
+ ocket-client-2.2.jar json-20160810.jar trove4j-3.0.3.jar mysql-connec
+ tor-java-6.0.6.jar okhttp-3.8.1.jar jsr305-3.0.2.jar jna-4.4.0.jar sl
+ f4j-log4j12-1.7.25.jar JDA-3.3.0_260.jar
+Main-Class: fr.matthis974jump.bots.surv.Main
+
