@@ -18,11 +18,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/fr/matthis974jump/musicbot/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-216">
-              <caret line="53" column="100" lean-forward="false" selection-start-line="53" selection-start-column="100" selection-end-line="53" selection-end-column="100" />
+            <state relative-caret-position="350">
+              <caret line="71" column="102" lean-forward="true" selection-start-line="71" selection-start-column="102" selection-end-line="71" selection-end-column="102" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#3324#3332#0" expanded="true" />
@@ -88,6 +88,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="bot1.json" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/bot1.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="MusicCommand.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/fr/matthis974jump/musicbot/music/MusicCommand.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -116,16 +126,6 @@
                 <element signature="e#1366#1367#0" expanded="true" />
                 <element signature="e#1455#1456#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bot2.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bot2.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="68" lean-forward="false" selection-start-line="4" selection-start-column="68" selection-end-line="4" selection-end-column="68" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -165,12 +165,12 @@
         <option value="$PROJECT_DIR$/src/main/java/fr/matthis974jump/musicbot/music/MusicPlayer.java" />
         <option value="$PROJECT_DIR$/bot2.json" />
         <option value="$PROJECT_DIR$/bot3.json" />
-        <option value="$PROJECT_DIR$/bot1.json" />
         <option value="$PROJECT_DIR$/src/main/java/fr/matthis974jump/musicbot/music/AudioListener.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/fr/matthis974jump/musicbot/music/MusicCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/fr/matthis974jump/musicbot/music/MusicManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/fr/matthis974jump/musicbot/Main.java" />
+        <option value="$PROJECT_DIR$/bot1.json" />
       </list>
     </option>
   </component>
@@ -182,7 +182,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="268" />
+    <option name="x" value="564" />
     <option name="y" value="23" />
     <option name="width" value="2056" />
     <option name="height" value="1341" />
@@ -408,7 +408,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="268" y="23" width="2056" height="1341" extended-state="0" />
+    <frame x="564" y="23" width="2056" height="1341" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -416,9 +416,9 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32939324" sideWeight="0.5019455" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32939324" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32939324" sideWeight="0.49805447" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -617,14 +617,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bot1.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="1" lean-forward="false" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bot3.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -724,14 +716,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/fr/matthis974jump/musicbot/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-216">
-          <caret line="53" column="100" lean-forward="false" selection-start-line="53" selection-start-column="100" selection-end-line="53" selection-end-column="100" />
+        <state relative-caret-position="350">
+          <caret line="71" column="102" lean-forward="true" selection-start-line="71" selection-start-column="102" selection-end-line="71" selection-end-column="102" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#3324#3332#0" expanded="true" />
             <element signature="e#3911#3912#0" expanded="true" />
             <element signature="e#3941#3942#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bot1.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
