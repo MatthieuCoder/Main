@@ -1,8 +1,13 @@
 package fr.matthis974jump.musicbot;
 
+import com.jagrosh.jdautilities.commandclient.CommandClientBuilder;
+import com.jagrosh.jdautilities.commandclient.examples.PingCommand;
+import com.jagrosh.jdautilities.commandclient.examples.ShutdownCommand;
+import com.jagrosh.jdautilities.waiter.EventWaiter;
 import fr.matthis974jump.musicbot.fileutils.ConfigBot;
 import fr.matthis974jump.musicbot.fileutils.FileManager;
 import fr.matthis974jump.musicbot.fileutils.GsonManager;
+import fr.matthis974jump.musicbot.music.MusicCommand;
 import fr.matthis974jump.musicbot.music.MusicManager;
 import fr.matthis974jump.musicbot.music.Utils;
 import net.dv8tion.jda.core.AccountType;
@@ -30,7 +35,39 @@ public class Main implements Runnable {
             ConfigBot cb = gm.deserialize(FileManager.loadfile(file));
             System.out.println("Loading bot with "+s);
 
-            jda = new JDABuilder(AccountType.BOT).setToken(cb.getToken()).setGame(Game.of(cb.getGame())).buildBlocking();
+            // define an eventwaiter, dont forget to add this to the JDABuilder!
+            EventWaiter waiter = new EventWaiter();
+
+            // define a command client
+            CommandClientBuilder client = new CommandClientBuilder();
+
+            // The default is "Type !!help" (or whatver prefix you set)
+            client.useDefaultGame();
+
+            // sets the owner of the bot
+            client.setOwnerId("314354049023737857");
+
+            // sets emojis used throughout the bot on successes, warnings, and failures
+            client.setEmojis("\uD83D\uDE03", "\uD83D\uDE2E", "\uD83D\uDE26");
+
+            // sets the bot prefix
+            client.setPrefix("!!music "+file.getName().replace(".json","").replaceFirst("bot","")+" ");
+
+            // adds commands
+            client.addCommands(
+
+
+                    // command to check bot latency
+                    new PingCommand(),
+                    new MusicCommand(waiter,manager),
+                    new ShutdownCommand()
+
+            );
+
+            jda = new JDABuilder(AccountType.BOT).setToken(cb.getToken()).setGame(Game.of(cb.getGame()))
+                    .addEventListener(waiter)
+                    .addEventListener(client.build())
+            .buildBlocking();
             for(Guild g : jda.getGuilds()){
                 g.getController().setNickname(g.getMember(jda.getSelfUser()),cb.getName()).complete();
             }
@@ -69,7 +106,7 @@ public class Main implements Runnable {
     }
 
     private void shutdown() {
-
+        jda.shutdown();
     }
 
     public void run() {

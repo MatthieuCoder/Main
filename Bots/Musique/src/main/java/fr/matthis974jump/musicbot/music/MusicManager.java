@@ -63,4 +63,8 @@ public class MusicManager {
             }
         });
     }
+
+    public void skipTrack(Guild g) {
+        players.get(g.getId()).skipTrack();
+    }
 }
