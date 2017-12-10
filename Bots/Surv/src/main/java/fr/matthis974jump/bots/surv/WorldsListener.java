@@ -61,7 +61,7 @@ public class WorldsListener implements EventListener{
             builder.setDescription("SANCTION - VOCABULAIRE");
             builder.setTitle("SANCTION - VOCABULAIRE");
             for (Advertissements ad : ldw) {
-                builder.addField("Système interdit : ",ad.getWhy(),true);
+                builder.addField("Mot ou terme interdit : ",ad.getWhy(),true);
 
                     CompletableFuture<String> completableFuture
                             = CompletableFuture.supplyAsync(() -> {
@@ -73,7 +73,7 @@ public class WorldsListener implements EventListener{
                         return "";
                     });
             }
-            builder.setDescription("*("+ldw.size()+" avertissements ajoutés)*");
+            builder.setDescription("**("+ldw.size()+" avertissements ajoutés)**");
             CompletableFuture<String> completableFuture
                     = CompletableFuture.supplyAsync(() -> {
                         e.getMessage().delete().complete();

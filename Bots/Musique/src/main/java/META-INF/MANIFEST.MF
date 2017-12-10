@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Class-Path: httpclient-4.5.2.jar nv-websocket-client-2.2.jar commons-c
+ odec-1.9.jar commons-logging-1.2.jar okio-1.13.0.jar jackson-annotati
+ ons-2.8.0.jar jna-4.4.0.jar mysql-connector-java-6.0.6.jar jackson-da
+ tabind-2.8.5.jar okhttp-3.8.1.jar commons-collections4-4.1.jar lavapl
+ ayer-1.2.45.jar slf4j-simple-1.7.25.jar slf4j-log4j12-1.7.25.jar json
+ -20160810.jar log4j-1.2.17.jar trove4j-3.0.3.jar JDA-Utilities-1.8.ja
+ r httpcore-4.4.4.jar jsr305-3.0.2.jar jackson-core-2.8.5.jar lavaplay
+ er-common-1.0.5.jar commons-io-2.5.jar base64-2.3.9.jar jsoup-1.10.1.
+ jar JDA-3.3.0_260.jar gson-2.8.2.jar slf4j-api-1.7.25.jar
+Main-Class: fr.matthis974jump.musicbot.Main
+
