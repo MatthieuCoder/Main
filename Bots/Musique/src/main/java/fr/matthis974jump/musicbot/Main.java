@@ -7,9 +7,11 @@ import com.jagrosh.jdautilities.waiter.EventWaiter;
 import fr.matthis974jump.musicbot.fileutils.ConfigBot;
 import fr.matthis974jump.musicbot.fileutils.FileManager;
 import fr.matthis974jump.musicbot.fileutils.GsonManager;
-import fr.matthis974jump.musicbot.music.MusicCommand;
 import fr.matthis974jump.musicbot.music.MusicManager;
 import fr.matthis974jump.musicbot.music.Utils;
+import fr.matthis974jump.musicbot.music.commands.InfoCommand;
+import fr.matthis974jump.musicbot.music.commands.QueueCommand;
+import fr.matthis974jump.musicbot.music.commands.SkipCommand;
 import net.dv8tion.jda.core.AccountType;
 import net.dv8tion.jda.core.JDA;
 import net.dv8tion.jda.core.JDABuilder;
@@ -59,7 +61,9 @@ public class Main implements Runnable {
 
                     // command to check bot latency
                     new PingCommand(),
-                    new MusicCommand(waiter,manager),
+                    new InfoCommand(waiter,manager),
+                    new QueueCommand(waiter,manager),
+                    new SkipCommand(waiter,manager),
                     new ShutdownCommand()
 
             );
