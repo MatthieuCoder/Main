@@ -9,16 +9,18 @@ import com.sedmelluq.discord.lavaplayer.player.AudioPlayer;
 import com.sedmelluq.discord.lavaplayer.track.AudioTrack;
 
 import net.dv8tion.jda.core.entities.Guild;
+import net.dv8tion.jda.core.entities.TextChannel;
 
 public class MusicPlayer {
 
     private final AudioPlayer audioPlayer;
     private final AudioListener listener;
     private final Guild guild;
-
-    public MusicPlayer(AudioPlayer audioPlayer, Guild guild){
+    private final TextChannel tc;
+    public MusicPlayer(AudioPlayer audioPlayer, Guild guild, TextChannel tc){
         this.audioPlayer = audioPlayer;
         this.guild = guild;
+        this.tc = tc;
         listener = new AudioListener(this);
         audioPlayer.addListener(listener);
     }
@@ -45,5 +47,9 @@ public class MusicPlayer {
 
     public synchronized void skipTrack(){
         listener.nextTrack();
+    }
+
+    public TextChannel getTextChannel() {
+        return tc;
     }
 }

@@ -25,7 +25,7 @@ public class MusicManager {
     }
 
     public synchronized MusicPlayer getPlayer(Guild guild){
-        if(!players.containsKey(guild.getId())) players.put(guild.getId(), new MusicPlayer(manager.createPlayer(), guild));
+        if(!players.containsKey(guild.getId())) players.put(guild.getId(), new MusicPlayer(manager.createPlayer(), guild, guild.getDefaultChannel()));
         return players.get(guild.getId());
     }
 
@@ -55,7 +55,7 @@ public class MusicManager {
 
 
             public void noMatches() {
-                
+
             }
 
             public void loadFailed(FriendlyException exception) {

@@ -38,7 +38,8 @@ public class AudioListener extends AudioEventAdapter{
     public void onTrackEnd(AudioPlayer player, AudioTrack track, AudioTrackEndReason endReason) {
         if (endReason.mayStartNext) {
             nextTrack();
-
+            this.player.getTextChannel().sendMessage("Next Track : "+track.getInfo().title+"\n Queue size : "+tracks.size()).queue();
+            this.tracks.add(track);
 
         }
     }
