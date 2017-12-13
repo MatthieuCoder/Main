@@ -55,11 +55,10 @@ public class MusicManager {
 
 
             public void noMatches() {
-                channel.sendMessage("La piste " + source + " n'a pas été trouvé.").queue();
+                
             }
 
             public void loadFailed(FriendlyException exception) {
-                channel.sendMessage("Impossible de jouer la piste (raison:" + exception.getMessage()+")").queue();
             }
         });
     }

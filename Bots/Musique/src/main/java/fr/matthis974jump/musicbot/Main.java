@@ -19,7 +19,6 @@ import net.dv8tion.jda.core.entities.Game;
 import net.dv8tion.jda.core.entities.Guild;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -27,7 +26,7 @@ import java.util.Scanner;
 public class Main implements Runnable {
     private  JDA jda;
     private MusicManager manager = new MusicManager();
-    public Main(String s) {
+    public Main(String s, boolean isFolder) {
         File file = new File(s);
 
         try {
@@ -76,15 +75,19 @@ public class Main implements Runnable {
                 g.getController().setNickname(g.getMember(jda.getSelfUser()),cb.getName()).complete();
             }
             jda.getGuildById("374892234597859330").getAudioManager().openAudioConnection(jda.getVoiceChannelById(cb.getIdchannel()));
-            Utils.loadFolder(new File(cb.getMusicpath()),manager,jda.getTextChannelById("389301847564877834"));
-
+            if( isFolder){
+                Utils.loadFolder(new File(cb.getMusicpath()),manager,jda.getTextChannelById("389301847564877834"));
+            }else{
+                manager.loadTrack(jda.getTextChannelById("389301847564877834"),cb.getMusicpath());
+            }
+            jda.getPresence().setGame(Game.of(cb.getGame()));
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
     public static void main(String[] args){
-        Main[] bots = new Main[]{new Main("bot1.json"),new Main("bot2.json"),new Main("bot3.json")};
+        Main[] bots = new Main[]{new Main("bot1.json", true),new Main("bot2.json", true),new Main("bot3.json", true),new Main("bot0.json", false)};
         List<Thread> threads = new ArrayList<Thread>();
         for (Main m:
              bots) {
