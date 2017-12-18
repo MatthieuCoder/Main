@@ -1,0 +1,21 @@
+{
+  "token": "MzkwMTI0NjUxOTQ4NTM5OTA2.DRWWFA.CQjWKHAiE-ty0AuZHTbOvHyPjOE",
+  "name": "6 Checkeur de Serveurs",
+  "game": "Checker les Serveurs",
+  "idMessage": "391280020317929472",
+  "idSallon": "374959885030391828",
+  "hosts": [
+    {
+      "adress": "google.com",
+      "port": 80,
+      "enabled": true,
+      "name": "Google"
+    },
+    {
+      "adress": "overplayer.fr",
+      "port": 80,
+      "enabled": true,
+      "name": "OverPlayer.fr"
+    }
+  ]
+}

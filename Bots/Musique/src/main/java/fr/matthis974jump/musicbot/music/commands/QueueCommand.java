@@ -34,6 +34,7 @@ public class QueueCommand extends Command {
         EmbedBuilder emb = new EmbedBuilder();
         emb.setColor(Color.BLUE);
         int i = 1;
+        emb.appendDescription(music.getPlayer(commandEvent.getGuild()).getListener().getTrackSize()+" chansons dans la queue");
         for(AudioTrack t : music.getPlayer(commandEvent.getGuild()).getListener().getTracks()){
             int totalSecs = (int) t.getDuration();
             int seconds;
@@ -50,6 +51,9 @@ public class QueueCommand extends Command {
                 arl.add(emb.build());
                 emb = new EmbedBuilder();
                 emb.setColor(Color.BLUE);
+            }
+            if(i > 10){
+               break;
             }
         }
         for (MessageEmbed e : arl){
