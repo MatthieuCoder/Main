@@ -76,9 +76,9 @@ public class Main implements Runnable {
             }
             jda.getGuildById("374892234597859330").getAudioManager().openAudioConnection(jda.getVoiceChannelById(cb.getIdchannel()));
             if( isFolder){
-                Utils.loadFolder(new File(cb.getMusicpath()),manager,jda.getTextChannelById("389301847564877834"));
+                Utils.loadFolder(new File(cb.getMusicpath()),manager,jda.getTextChannelById("393018511766847498"));
             }else{
-                manager.loadTrack(jda.getTextChannelById("389301847564877834"),cb.getMusicpath());
+                manager.loadTrack(jda.getTextChannelById("393018511766847498"),cb.getMusicpath());
             }
             jda.getPresence().setGame(Game.of(cb.getGame()));
         } catch (Exception e) {
